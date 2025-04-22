@@ -1,0 +1,102 @@
+# ===== System files =====
+.DS_Store               # Mac OS
+Thumbs.db               # Windows
+ehthumbs.db             # Windows
+Icon?                   # macOS resource fork
+Desktop.ini             # Windows
+$RECYCLE.BIN/           # Windows recycle bin folder
+*.log                   # Log files
+
+# ===== Node.js =====
+node_modules/           # Dependencies (jeśli kiedyś będziesz używać np. Node/React/Vite)
+npm-debug.log*          # NPM debug log files
+yarn-debug.log*         # Yarn debug log files
+yarn-error.log*
+
+# ===== Environment files =====
+.env                    # Environment variables (np. API keys, hasła)
+.env.local
+.env.*.local
+
+# ===== Firebase =====
+firebase-debug.log
+.firebaserc
+
+# ===== VS Code =====
+.vscode/                # VS Code folder z ustawieniami lokalnymi
+
+# ===== macOS =====
+.AppleDouble            # macOS resource forks
+.LSOverride
+*.swp                   # vim swap files
+*.swo
+*~
+
+# ===== Misc =====
+coverage/               # Test coverage reports
+dist/                   # Folder z buildem (np. Vite, Webpack)
+build/                  # Build folder (np. React)
+.cache/                 # Cache folder (np. Vue, Vite)
+tmp/                    # Temporary files
+temp/
+*.tmp
+*.temp
+
+# ===== IDEs and editors =====
+.idea/                  # JetBrains IDEs (np. WebStorm)
+*.sublime-workspace
+*.sublime-project
+
+# ===== Tests =====
+*.testlog               # Custom test log files
+# ===== System files =====
+.DS_Store               # Mac OS
+Thumbs.db               # Windows
+ehthumbs.db             # Windows
+Icon?                   # macOS resource fork
+Desktop.ini             # Windows
+$RECYCLE.BIN/           # Windows recycle bin folder
+*.log                   # Log files
+
+# ===== Node.js =====
+node_modules/           # Dependencies (jeśli kiedyś będziesz używać np. Node/React/Vite)
+npm-debug.log*          # NPM debug log files
+yarn-debug.log*         # Yarn debug log files
+yarn-error.log*
+
+# ===== Environment files =====
+.env                    # Environment variables (np. API keys, hasła)
+.env.local
+.env.*.local
+
+# ===== Firebase =====
+firebase-debug.log
+.firebaserc
+
+# ===== VS Code =====
+.vscode/                # VS Code folder z ustawieniami lokalnymi
+
+# ===== macOS =====
+.AppleDouble            # macOS resource forks
+.LSOverride
+*.swp                   # vim swap files
+*.swo
+*~
+
+# ===== Misc =====
+coverage/               # Test coverage reports
+dist/                   # Folder z buildem (np. Vite, Webpack)
+build/                  # Build folder (np. React)
+.cache/                 # Cache folder (np. Vue, Vite)
+tmp/                    # Temporary files
+temp/
+*.tmp
+*.temp
+
+# ===== IDEs and editors =====
+.idea/                  # JetBrains IDEs (np. WebStorm)
+*.sublime-workspace
+*.sublime-project
+
+# ===== Tests =====
+*.testlog               # Custom test log files
