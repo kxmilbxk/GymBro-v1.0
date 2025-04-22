@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymBro Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/firebase@10.11.1/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@10.11.1/firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@10.11.1/firebase-database.js"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+
+<!-- Nawigacja -->
+<nav class="bg-white dark:bg-gray-800 shadow p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <span class="text-xl font-bold text-gray-800 dark:text-gray-200">GymBro</span>
+        <button id="themeToggle" class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700">Motyw</button>
+    </div>
+</nav>
+
+<!-- Główna treść strony -->
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Witaj w aplikacji GymBro!</h1>
+
+    <!-- Logowanie i Rejestracja -->
+    <div id="auth" class="max-w-md mx-auto">
+        <input id="email" type="email" placeholder="Email" class="block w-full mb-2 p-2 border rounded">
+        <input id="password" type="password" placeholder="Hasło" class="block w-full mb-4 p-2 border rounded">
+        <button id="login" class="w-full p-2 bg-blue-500 text-white rounded mb-2">Zaloguj się</button>
+        <button id="register" class="w-full p-2 bg-green-500 text-white rounded">Zarejestruj się</button>
+    </div>
+
+    <!-- Miejsce na resztę treści -->
+    <div id="content" class="mt-6 hidden">
+        <p class="text-gray-800 dark:text-gray-200">Tutaj pojawi się dalsza zawartość po zalogowaniu.</p>
+    </div>
+
+</div>
+
+<script>
+    // Konfiguracja Firebase (wstaw swoje dane konfiguracyjne)
+    const firebaseConfig = {
+        apiKey: "TWOJ_API_KEY",
+        authDomain: "TWOJ_AUTH_DOMAIN",
+        databaseURL: "TWOJ_DATABASE_URL",
+        projectId: "TWOJ_PROJECT_ID",
+        storageBucket: "TWOJ_STORAGE_BUCKET",
+        messagingSenderId: "TWOJ_MESSAGING_SENDER_ID",
+        appId: "TWOJ_APP_ID"
+    };
+
+    // Inicjalizacja Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Logowanie
+    document.getElementById('login').onclick = () => {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then(() => alert("Zalogowano!"))
+            .catch(error => alert(error.message));
+    };
+
+    // Rejestracja
+    document.getElementById('register').onclick = () => {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(() => alert("Zarejestrowano!"))
+            .catch(error => alert(error.message));
+    };
+
+    // Motyw jasny/ciemny
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.onclick = () => document.documentElement.classList.toggle('dark');
+
+</script>
+
+</body>
+</html>
